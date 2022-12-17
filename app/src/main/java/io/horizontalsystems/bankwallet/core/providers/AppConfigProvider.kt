@@ -5,15 +5,15 @@ import io.horizontalsystems.core.entities.Currency
 
 class AppConfigProvider {
 
-     val companyWebPageLink: String = "https://horizontalsystems.io"
+     val companyWebPageLink: String = "https://www.abitoken.com/"
      val appWebPageLink: String = "https://www.abitoken.com/"
-     val appGithubLink: String = "https://github.com/horizontalsystems/unstoppable-wallet-android"
-     val appTwitterLink: String = "https://twitter.com/UnstoppableByHS"
-     val appTelegramLink: String = "https://t.me/unstoppable_announcements"
+     val appGithubLink: String = "https://github.com/PavelSukochev/ABITOKEN_ANDR_CRYPTO_WALLET"
+     val appTwitterLink: String = "https://t.me/top50cryptochannels"
+     val appTelegramLink: String = "https://t.me/top50cryptochannels"
      val appRedditLink: String = "https://www.reddit.com/r/UNSTOPPABLEWallet/"
      val reportEmail = "abittoken@gmail.com"
      val btcCoreRpcUrl: String = "https://btc.blocksdecoded.com/rpc"
-     val releaseNotesUrl: String = "https://api.github.com/repos/horizontalsystems/unstoppable-wallet-android/releases/tags/"
+     val releaseNotesUrl: String = "https://github.com/PavelSukochev/ABITOKEN_ANDR_CRYPTO_WALLET"
      val walletConnectUrl = "relay.walletconnect.com"
      val walletConnectProjectId by lazy {
          Translator.getString(R.string.walletConnectV2Key)
