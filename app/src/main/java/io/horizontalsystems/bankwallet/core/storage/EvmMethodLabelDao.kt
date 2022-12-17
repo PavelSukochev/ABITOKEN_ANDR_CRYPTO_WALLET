@@ -1,6 +1,7 @@
 package io.horizontalsystems.bankwallet.core.storage
 
 import androidx.room.*
+import io.horizontalsystems.bankwallet.entities.EvmAddressLabel
 import io.horizontalsystems.bankwallet.entities.EvmMethodLabel
 
 @Dao

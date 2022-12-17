@@ -47,86 +47,86 @@ class FaqListFragment : BaseFragment() {
                 ViewCompositionStrategy.DisposeOnLifecycleDestroyed(viewLifecycleOwner)
             )
             setContent {
-                ComposeAppTheme {
-                    FaqScreen(
-                        onCloseClick = { findNavController().popBackStack() },
-                        onItemClick = { faqItem ->
-                            val arguments =
-                                bundleOf(MarkdownFragment.markdownUrlKey to faqItem.markdown)
-                            findNavController().slideFromRight(R.id.markdownFragment, arguments)
-                        }
-                    )
-                }
+//                ComposeAppTheme {
+//                    FaqScreen(
+//                        onCloseClick = { findNavController().popBackStack() },
+//                        onItemClick = { faqItem ->
+//                            val arguments =
+//                                bundleOf(MarkdownFragment.markdownUrlKey to faqItem.markdown)
+//                            findNavController().slideFromRight(R.id.markdownFragment, arguments)
+//                        }
+//                    )
+//                }
             }
         }
     }
 }
+//
+//@Composable
+//private fun FaqScreen(
+//    onCloseClick: () -> Unit,
+//    onItemClick: (Faq) -> Unit,
+//    viewModel: FaqViewModel = viewModel(factory = FaqModule.Factory())
+//) {
+//    val viewState = viewModel.viewState
+//    Column(modifier = Modifier.background(color = ComposeAppTheme.colors.tyler)) {
+//        AppBar(
+//            title = TranslatableString.ResString(R.string.Settings_Faq),
+//            navigationIcon = {
+//                HsIconButton(onClick = onCloseClick) {
+//                    Icon(
+//                        painter = painterResource(id = R.drawable.ic_back),
+//                        contentDescription = "back",
+//                        tint = ComposeAppTheme.colors.jacob
+//                    )
+//                }
+//            }
+//        )
+//        Crossfade(viewState) { viewState ->
+//            when (viewState) {
+//                ViewState.Loading -> {
+//                    Loading()
+//                }
+//                is ViewState.Error -> {
+//                    val s = when (val error = viewState.t) {
+//                        is UnknownHostException -> stringResource(R.string.Hud_Text_NoInternet)
+//                        is LocalizedException -> stringResource(error.errorTextRes)
+//                        else -> stringResource(R.string.Hud_UnknownError, error)
+//                    }
+//
+//                    ScreenMessageWithAction(s, R.drawable.ic_error_48)
+//                }
+//                ViewState.Success -> {
+//                    Column {
+//                        val tabItems =
+//                            viewModel.sections.map {
+//                                TabItem(
+//                                    it.section,
+//                                    it == viewModel.selectedSection,
+//                                    it
+//                                )
+//                            }
+//                        ScrollableTabs(tabItems) { tab ->
+//                            viewModel.onSelectSection(tab)
+//                        }
+//
+//                        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+//                            Spacer(Modifier.height(12.dp))
+//                            HSSectionRounded {
+//                                viewModel.faqItems.forEachIndexed { index, faq ->
+//                                    CellLawrence(
+//                                        borderTop = index != 0,
+//                                        onClick = { onItemClick(faq) }
+//                                    ) {
+//                                        subhead1_leah(text = faq.title)
+//                                    }
+//                                }
+//                            }
+//                            Spacer(Modifier.height(32.dp))
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
-@Composable
-private fun FaqScreen(
-    onCloseClick: () -> Unit,
-    onItemClick: (Faq) -> Unit,
-    viewModel: FaqViewModel = viewModel(factory = FaqModule.Factory())
-) {
-    val viewState = viewModel.viewState
-    Column(modifier = Modifier.background(color = ComposeAppTheme.colors.tyler)) {
-        AppBar(
-            title = TranslatableString.ResString(R.string.Settings_Faq),
-            navigationIcon = {
-                HsIconButton(onClick = onCloseClick) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_back),
-                        contentDescription = "back",
-                        tint = ComposeAppTheme.colors.jacob
-                    )
-                }
-            }
-        )
-        Crossfade(viewState) { viewState ->
-            when (viewState) {
-                ViewState.Loading -> {
-                    Loading()
-                }
-                is ViewState.Error -> {
-                    val s = when (val error = viewState.t) {
-                        is UnknownHostException -> stringResource(R.string.Hud_Text_NoInternet)
-                        is LocalizedException -> stringResource(error.errorTextRes)
-                        else -> stringResource(R.string.Hud_UnknownError, error)
-                    }
-
-                    ScreenMessageWithAction(s, R.drawable.ic_error_48)
-                }
-                ViewState.Success -> {
-                    Column {
-                        val tabItems =
-                            viewModel.sections.map {
-                                TabItem(
-                                    it.section,
-                                    it == viewModel.selectedSection,
-                                    it
-                                )
-                            }
-                        ScrollableTabs(tabItems) { tab ->
-                            viewModel.onSelectSection(tab)
-                        }
-
-                        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-                            Spacer(Modifier.height(12.dp))
-                            HSSectionRounded {
-                                viewModel.faqItems.forEachIndexed { index, faq ->
-                                    CellLawrence(
-                                        borderTop = index != 0,
-                                        onClick = { onItemClick(faq) }
-                                    ) {
-                                        subhead1_leah(text = faq.title)
-                                    }
-                                }
-                            }
-                            Spacer(Modifier.height(32.dp))
-                        }
-                    }
-                }
-            }
-        }
-    }
-}

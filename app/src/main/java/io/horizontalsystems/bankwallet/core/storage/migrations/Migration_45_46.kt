@@ -207,6 +207,9 @@ private sealed class CoinType : Parcelable {
     class Xdai(val address: String) : CoinType()
 
     @Parcelize
+    class Abitoken(val address: String): CoinType()
+
+    @Parcelize
     class Unsupported(val type: String) : CoinType()
 
     val id: String
@@ -238,6 +241,7 @@ private sealed class CoinType : Parcelable {
             is Sora -> "sora|$address"
             is Tomochain -> "tomochain|$address"
             is Xdai -> "xdai|$address"
+            is Abitoken -> "abit|$address"
             is Unsupported -> "unsupported|$type"
         }
 
@@ -277,6 +281,8 @@ private sealed class CoinType : Parcelable {
         is Sora -> shorted("sora", address)
         is Tomochain -> shorted("tomochain", address)
         is Xdai -> shorted("xdai", address)
+
+        is Abitoken -> shorted("abit", address)
         is Unsupported -> "unsupported|$type"
     }
 

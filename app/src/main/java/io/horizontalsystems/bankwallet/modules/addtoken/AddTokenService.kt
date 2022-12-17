@@ -33,10 +33,12 @@ class AddTokenService(
             if (token != null) {
                 val inWallet = activeWallets.any { it.token == token }
                 tokenInfos.add(TokenInfo.Local(token, inWallet))
+
             } else {
                 try {
                     val customCoin = service.customCoin(reference)
                     tokenInfos.add(TokenInfo.Remote(customCoin))
+
                 } catch (e: Exception) {
                 }
             }
@@ -59,7 +61,11 @@ class AddTokenService(
                     marketKit.blockchain(tokenQuery.blockchainType.uid)?.let { blockchain ->
                         val coinUid = tokenQuery.customCoinUid
                         Token(
-                            coin = io.horizontalsystems.marketkit.models.Coin(coinUid, tokenInfo.coinName, tokenInfo.coinCode),
+                            coin = io.horizontalsystems.marketkit.models.Coin(
+                                coinUid,
+                                tokenInfo.coinName,
+                                tokenInfo.coinCode
+                            ),
                             blockchain = blockchain,
                             type = tokenQuery.tokenType,
                             decimals = tokenInfo.decimals

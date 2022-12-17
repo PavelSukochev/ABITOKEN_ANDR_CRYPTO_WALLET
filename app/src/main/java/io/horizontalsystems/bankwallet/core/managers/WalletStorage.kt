@@ -35,7 +35,11 @@ class WalletStorage(
                 val blockchain = blockchains.first { it.uid == tokenQuery.blockchainType.uid }
 
                 val token = Token(
-                    coin = io.horizontalsystems.marketkit.models.Coin(coinUid, enabledWallet.coinName, enabledWallet.coinCode),
+                    coin = io.horizontalsystems.marketkit.models.Coin(
+                        coinUid,
+                        enabledWallet.coinName,
+                        enabledWallet.coinCode
+                    ),
                     blockchain = blockchain,
                     type = tokenQuery.tokenType,
                     decimals = enabledWallet.coinDecimals

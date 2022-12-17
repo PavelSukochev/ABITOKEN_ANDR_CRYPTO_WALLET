@@ -195,23 +195,25 @@ private fun SettingSections(
     Spacer(Modifier.height(32.dp))
 
     CellSingleLineLawrenceSection(
-        listOf({
-            HsSettingCell(
-                R.string.Settings_Faq,
-                R.drawable.ic_faq_20,
-                onClick = {
-                    navController.slideFromRight(R.id.faqListFragment)
-                }
-            )
-        }, {
-            HsSettingCell(
-                R.string.Guides_Title,
-                R.drawable.ic_academy_20,
-                onClick = {
-                    navController.slideFromRight(R.id.academyFragment)
-                }
-            )
-        })
+        listOf(
+            //{
+////            HsSettingCell(
+////                R.string.Settings_Faq,
+////                R.drawable.ic_faq_20,
+////                onClick = {
+////                    navController.slideFromRight(R.id.faqListFragment)
+////                }
+////            )
+//       },
+            {
+                HsSettingCell(
+                    R.string.Guides_Title,
+                    R.drawable.ic_academy_20,
+                    onClick = {
+                        navController.slideFromRight(R.id.academyFragment)
+                    }
+                )
+            })
     )
 
     Spacer(Modifier.height(32.dp))
@@ -288,9 +290,16 @@ private fun SettingsFooter(appVersion: String, companyWebPage: String) {
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        caption_grey(text = stringResource(R.string.Settings_InfoTitleWithVersion, appVersion).uppercase())
+        caption_grey(
+            text = stringResource(
+                R.string.Settings_InfoTitleWithVersion,
+                appVersion
+            ).uppercase()
+        )
         Divider(
-            modifier = Modifier.width(100.dp).padding(top = 8.dp, bottom = 4.5.dp),
+            modifier = Modifier
+                .width(100.dp)
+                .padding(top = 8.dp, bottom = 4.5.dp),
             thickness = 0.5.dp,
             color = ComposeAppTheme.colors.steel20
         )
@@ -306,7 +315,7 @@ private fun SettingsFooter(appVersion: String, companyWebPage: String) {
                 .clickable {
                     LinkHelper.openLinkInAppBrowser(context, companyWebPage)
                 },
-            painter = painterResource(id = R.drawable.ic_company_logo),
+            painter = painterResource(id = R.drawable.ic_logo_abi),
             contentDescription = null,
         )
         caption_grey(

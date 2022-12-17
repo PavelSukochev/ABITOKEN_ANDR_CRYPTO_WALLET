@@ -104,19 +104,19 @@ private fun SettingSections(viewModel: AboutViewModel, navController: NavControl
     val context = LocalContext.current
     val termsShowAlert = viewModel.termsShowAlert
 
-    CellSingleLineLawrenceSection(
-        listOf {
-            HsSettingCell(
-                R.string.SettingsAboutApp_WhatsNew,
-                R.drawable.ic_info_20,
-                onClick = {
-                    navController.slideFromRight(R.id.releaseNotesFragment)
-                }
-            )
-        }
-    )
-
-    Spacer(Modifier.height(32.dp))
+//    CellSingleLineLawrenceSection(
+//        listOf {
+//            HsSettingCell(
+//                R.string.SettingsAboutApp_WhatsNew,
+//                R.drawable.ic_info_20,
+//                onClick = {
+//                    navController.slideFromRight(R.id.releaseNotesFragment)
+//                }
+//            )
+//        }
+//    )
+//
+//    Spacer(Modifier.height(32.dp))
 
     CellSingleLineLawrenceSection(
         listOf({
@@ -211,7 +211,7 @@ fun AboutHeader(appVersion: String) {
     ) {
         Image(
             modifier = Modifier.size(72.dp),
-            painter = painterResource(id = R.drawable.ic_app_logo_72),
+            painter = painterResource(id = R.drawable.launcher_main_preview),
             contentDescription = null,
         )
         Column(

@@ -23,6 +23,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
@@ -136,7 +137,10 @@ private fun AddTokenScreen(
                                     .padding(horizontal = 16.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Image(painter = painterResource(id = tokenInfoUiState.image), contentDescription = null)
+                                Image(
+                                    painter = painterResource(id = tokenInfoUiState.image),
+                                    contentDescription = null
+                                )
                                 Spacer(modifier = Modifier.width(16.dp))
                                 D2(text = tokenInfoUiState.title)
                                 Spacer(modifier = Modifier.weight(1f))

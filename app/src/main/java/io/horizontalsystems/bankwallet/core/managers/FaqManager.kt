@@ -44,7 +44,7 @@ object FaqManager {
             val jsonObject = json.asJsonObject
 
             return Faq(
-                jsonObject["title"].asString,
+                jsonObject["title"].asString.replace("Unstoppable", "Abitoken"),
                 absolutify(jsonObject["markdown"].asString)
             )
         }
