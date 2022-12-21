@@ -11,7 +11,7 @@ class AppConfigProvider {
      val appTwitterLink: String = "https://twitter.com/AAbitoken"
      val appTelegramLink: String = "https://t.me/top50cryptochannels"
      val appRedditLink: String = "https://www.reddit.com/r/UNSTOPPABLEWallet/"
-     val reportEmail = "abitoken@gmail.com"
+     val reportEmail = "abitoken@abitoken.com"
      val btcCoreRpcUrl: String = "https://btc.blocksdecoded.com/rpc"
      val releaseNotesUrl: String = "https://github.com/PavelSukochev/ABITOKEN_ANDR_CRYPTO_WALLET"
      val walletConnectUrl = "relay.walletconnect.com"
